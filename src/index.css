@@ -1,13 +1,198 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero {
+    padding-top: 15rem;
+    position: relative;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.hero h1 {
+    font-size: 7.0rem;
+    letter-spacing: .7rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
+
+.hero .hero_overlay{
+    width: 100%;
+}
+
+.hero .hero_overlay img{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.revolution-hero{
+    margin-top: 5rem;
+}
+
+.revolution-hero h1 {
+    font-size: 6rem;
+    letter-spacing: .4rem;
+}
+
+.dental-care h2{
+    font-size: 6rem;
+    letter-spacing: .4rem;
+}
+
+.dental-care .dental-care__textimage{
+    position: relative;
+    left: 1rem;
+}
+
+.dental-care .dental-care__textimage img:nth-child(1){
+    position: absolute;
+    left: -2rem;
+}
+
+.with-tech {
+    margin-top: 5rem;
+}
+
+.with-tech h2{
+    font-size: 6rem;
+}
+
+.with-tech_images{
+    position: relative;
+}
+
+.with-tech_images img{
+    position: absolute;
+    top: -3rem;
+}
+
+.with-tech_images img:nth-child(1){
+    z-index: 3;
+}
+
+.with-tech_images img:nth-child(2){
+    left: 2rem;
+    z-index: 2;
+}
+
+.with-tech_images img:nth-child(3){
+    left: 4rem;
+    z-index: 1;
+}
+
+.with-tech_images img:nth-child(4){
+    left: 6rem;
+}
+
+.with-tech .with-tech_cross{
+    margin-left: 11rem;
+}
+
+.near-footer{
+    gap: 18rem;
+    padding-left: 10rem!important;
+}
+
+.near-footer .near-footer_image{
+    position: relative;
+    top: -3rem;
+    z-index: 1;
+}
+
+.near-footer .near-footer_image img:nth-child(1){
+    align-self: flex-start;
+}
+.near-footer .near-footer_image img:nth-child(2) {
+    position: absolute;
+    right: -1rem;
+    bottom: -3.5rem;
+    z-index: 1;
+    top: 6rem;
+}
+
+.near-footer .near-footer_getstarted{
+     margin-top: 2rem;
+}
+
+.explore {
+    max-width: 78rem;
+    margin: 0 auto;
+}
+
+.explore .explore_left{
+    margin-top: 13rem;
+}
+
+.content-wrapper_buttons{
+    margin-top: 2.5rem;
+}
+
+.explore .explore_left h2{
+    max-width: 36rem;
+    margin-top: 2.5rem;
+    font-size: 3.5rem;
+    letter-spacing: .1rem;
+    font-weight: 400;
+}
+
+.content-wrapper .content-wrapper_buttons button:nth-child(1) {
+    background: #FF5928;
+    color: #ffffff;
+    border-radius: 20px;
+    border: none;
+    padding: .5rem 1.5rem;
+}
+
+.content-wrapper .content-wrapper_buttons button:nth-child(2) {
+    background: #ffffff;
+    color: #000000;
+    border-radius: 20px;
+    border: 1px solid #000000;
+    padding: .5rem 1.1rem;
+}
+
+/*Explore Navbar and hero section unique style*/
+.container-pagethree {
+    position: relative;
+}
+
+.container-pagethree .nav-pagethree{
+    width: 100%;
+    position: absolute;
+    margin-top: 1rem;
+    z-index: 1;
+}
+
+.image-buttonwrapper {
+    position: relative;
+    width: 100%;
+}
+
+.image-buttonwrapper button {
+    position: absolute;
+    background: transparent;
+    border-radius: 25px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: .4rem 1rem;
+    left: 1rem;
+    bottom: 1rem;
+}
+
+/*Animation*/
+.animated-imagewrapper {
+    transition: transform 0.5s ease-in-out;
+}
+
+.revolution{
+    display: none;
+}
+
+.last-page{
+    display: none;
+}
+
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
