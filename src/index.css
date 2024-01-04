@@ -24,6 +24,18 @@
     transform: translate(-50%, -50%);
 }
 
+.container-parent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container-parent .container-wrapper {
+    width: 100%;
+    flex: 1;
+}
+
 .revolution-hero{
     margin-top: 5rem;
 }
@@ -151,11 +163,11 @@
 }
 
 /*Explore Navbar and hero section unique style*/
-.container-pagethree {
+.third-page-container {
     position: relative;
 }
 
-.container-pagethree .nav-pagethree{
+.third-page-container .nav-pagethree{
     width: 100%;
     position: absolute;
     margin-top: 1rem;
@@ -178,7 +190,6 @@
     bottom: 1rem;
 }
 
-/*Animation*/
 .animated-imagewrapper {
     transition: transform 0.5s ease-in-out;
 }

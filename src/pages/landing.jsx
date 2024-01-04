@@ -51,7 +51,7 @@ const LandingPage = () => {
   const navRef = useRef(null);
   const exploreRightRef = useRef(null);
 
-  const [splitTextInstance, setSplitTextInstance] = useState(null);
+  const [splitText, setSplitText] = useState(null);
 
   useEffect(() => {
     const timeline = gsap.timeline();
@@ -60,8 +60,8 @@ const LandingPage = () => {
     const timelineFour = gsap.timeline();
     const timelineGetStarted = gsap.timeline();
     const anchorText = new SplitType("h1.anchor-text", { types: "chars" });
-    setSplitTextInstance(anchorText);
-   
+    setSplitText(anchorText);
+
     gsap.fromTo(
       anchorText.chars,
       {
@@ -142,9 +142,9 @@ const LandingPage = () => {
       },
     });
 
-    /**
-     * Fourth image animation
-     */
+  
+  // Fourth image animation
+    
     gsap.set(cardRefThree.current, { y: "100%", rotate: -10 });
 
     // Spin animation
@@ -161,7 +161,6 @@ const LandingPage = () => {
         cardRefFour.current.style.display = "none";
         secondPageRef.current.style.display = "block";
         firstPageRef.current.style.display = "none";
-        // Animate the top text "REVOLUTIONILIZING"
         gsap.from(".revolution-hero h1", {
           x: 500,
           opacity: 0,
@@ -195,13 +194,11 @@ const LandingPage = () => {
           },
         });
 
-        // Animate the bottom text 'With technology'
         gsap.from(".with-tech h2", {
           x: 500,
           opacity: 0,
           duration: 1,
           ease: "power2.inOut",
-          // delay: 4.5,
           onComplete: () => {
             // Use gsap.to with x: 0 as the starting point
             gsap.to(".with-tech h2", {
@@ -242,7 +239,7 @@ const LandingPage = () => {
 
       // Define the animation for each image-buttonwrapper
       const animateImage = (element, index) => {
-        const direction = index % 2 === 0 ? 1 : -1; // 1 for up, -1 for down
+        const direction = index % 2 === 0 ? 1 : -1; 
         gsap.to(element, {
           y: direction * 1000,
           duration: 10,
@@ -272,9 +269,9 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-4">
-      <div className="container-wrapper container-pagethree">
-        <div ref={navRef} className="navbar">
+    <div className="container  container-parent mx-auto px-4 py-4">
+      <div className="container-wrapper third-page-container">
+        <div ref={navRef}>
           <NavBar />
         </div>
 
@@ -283,16 +280,16 @@ const LandingPage = () => {
           <h1 className="text-center our-text">OUR ADVANTAGES</h1>
           <div className="hero_overlay">
             <div className="animated-imagewrapper" ref={cardRefFour}>
-              <img src={cardImageFour} alt="card-image-four" />
+              <img src={cardImageFour} alt="card-four" />
             </div>
             <div className="animated-imagewrapper" ref={cardRefThree}>
-              <img src={cardImageThree} alt="card-image-three" />
+              <img src={cardImageThree} alt="card-three" />
             </div>
             <div className="animated-imagewrapper" ref={cardRefTwo}>
-              <img src={cardImageTwo} alt="card-image-two" />
+              <img src={cardImageTwo} alt="card-two" />
             </div>
             <div className="animated-imagewrapper" ref={cardRef}>
-              <img src={cardImageOne} alt="card-image-one" />
+              <img src={cardImageOne} alt="card-one" />
             </div>
           </div>
         </div>
@@ -304,13 +301,13 @@ const LandingPage = () => {
             <h1>REVOLUTIONILIZING</h1>
             <div>
               <div className="flex items-center gap-2">
-                <img src={revolutionOne} alt="left-revolution-image" />
-                <img src={revolutionTwo} alt="middle-revolution-image" />
-                <img src={revolutionThree} alt="right-revolution-image" />
+                <img src={revolutionOne} alt="left-revolution" />
+                <img src={revolutionTwo} alt="middle-revolution" />
+                <img src={revolutionThree} alt="right-revolution" />
               </div>
               <p>
-                Modern Solutions,<br></br> Timeless Smiles
-              </p>
+                Modern Solutions 
+              </p> <p>Timeless Smiles</p>
             </div>
           </div>
 
@@ -319,7 +316,7 @@ const LandingPage = () => {
               <img src={assistanceText} alt="assistance-text" />
               <img src={assistanceIcon} alt="assistance-icon" />
             </div>
-            <div className="d-flex items-center gap-4">
+            <div className="flex items-center gap-4">
               <h2>DENTAL</h2>
               <div className="dental-care_textimage">
                 <img className="img-fluid" src={avatar} alt="avatar" />
@@ -331,10 +328,10 @@ const LandingPage = () => {
           <div className="container mx-auto with-tech flex items-center justify-center gap-2">
             <h2>WITH TECHNOLOGY</h2>
             <div className="with-tech_images">
-              <img src={smileOne} alt="smile-image-1" />
-              <img src={smileTwo} alt="smile-image-2" />
-              <img src={smileThree} alt="smile-image-3" />
-              <img src={smileFour} alt="smile-image-4" />
+              <img src={smileOne} alt="smile-1" />
+              <img src={smileTwo} alt="smile-2" />
+              <img src={smileThree} alt="smile-3" />
+              <img src={smileFour} alt="smile-4" />
             </div>
             <div className="with-tech_cross mb-4">
               <img src={cross} alt="with-tech-cross" />
@@ -345,9 +342,9 @@ const LandingPage = () => {
               <img
                 className="img-fluid"
                 src={smile}
-                alt="with-tech-smile-image"
+                alt="with-tech-smile"
               />
-              <img className="img-fluid" src={play} alt="play-image" />
+              <img className="img-fluid" src={play} alt="play" />
             </div>
             <img
               className="near-footer_getstarted"
@@ -360,6 +357,9 @@ const LandingPage = () => {
 
         {/* EXPLORE SECTION START HERE----- */}
         <div className="last-page" ref={thirdPageRef}>
+          <div className="nav-pagethree">
+            <NavBar />
+          </div>
           <section className="container mx-auto explore flex flex-wrap justify-between">
             <div className="explore_left">
               <div className="flex items-center gap-2">
@@ -379,23 +379,23 @@ const LandingPage = () => {
             <div className="explore_right" ref={exploreRightRef}>
               <div className="flex gap-4">
                 <div className="image-buttonwrapper">
-                  <img src={exploreRightTop} alt="explore-right-top-image" />
+                  <img src={exploreRightTop} alt="explore-right-top" />
                   <button>Toothbrush Tracking</button>
                 </div>
                 <div className="image-buttonwrapper">
-                  <img src={exploreRightTop2} alt="explore-right-top-2-image" />
+                  <img src={exploreRightTop2} alt="explore-right-top-2" />
                   <button>Oral Care Guides</button>
                 </div>
               </div>
               <div className="flex gap-4 mt-3">
                 <div className="image-buttonwrapper">
-                  <img src={exploreRightMiddle} alt="explore-middle-image" />
+                  <img src={exploreRightMiddle} alt="explore-middle" />
                   <button>Dental Health Records</button>
                 </div>
                 <div className="image-buttonwrapper">
                   <img
                     src={exploreRightMiddle2}
-                    alt="explore-middle-image-two"
+                    alt="explore-middle-two"
                   />
                   <button>Appointment Scheduling</button>
                 </div>
@@ -404,14 +404,14 @@ const LandingPage = () => {
                 <div className="image-buttonwrapper">
                   <img
                     src={exploreRightBottom}
-                    alt="explore-right-bottom-image"
+                    alt="explore-right-bottom"
                   />
                   <button>Oral Health Assessment</button>
                 </div>
                 <div className="image-buttonwrapper">
                   <img
                     src={exploreRightBottomTwo}
-                    alt="explore-right-bottom-image-two"
+                    alt="explore-right-bottom-two"
                   />
                   <button>Medication Tracking</button>
                 </div>
@@ -421,7 +421,6 @@ const LandingPage = () => {
         </div>
         {/*----END HERE EXPLORE SECTION*/}
       </div>
-
     </div>
   );
 };
