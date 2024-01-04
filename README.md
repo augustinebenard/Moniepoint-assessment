@@ -1,3 +1,26 @@
+# Moniepoint Frontend Translation Test
+
+This project is a recreation of a Dribbble design (https://dribbble.com/shots/22620941-Dental-Care-Landing-Page) using modern frontend technologies, including React and TailwindCSS.
+
+## Technologies Used
+
+- **React**: Empowering the user interface with a dynamic and interactive experience, React serves as the foundation for building seamless components and managing state in this project.
+
+- **TailwindCSS**: Tailwind CSS plays a key role in handling the basic styling of this project. Its utility-first approach allows for rapid prototyping and easy customization, ensuring a clean and responsive design.
+
+## Project Structure
+The project is organized into several components, each responsible for a specific section or feature. The main components include:
+
+- **Navbar**: Handles the navigation bar at the top of the page. It includes the logo and links to different sections.
+
+- **Hero**: Contains the hero section with a prominent title, and flipping image.
+
+- **Revolution**: Displays  images in animated form.
+
+- **Footer**: Displays the footer.
+  
+- **Explore**: Contains the pictures and writeup of the pioneers  
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
